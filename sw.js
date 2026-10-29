@@ -1,4 +1,4 @@
-const C='trip-v36';const F=['./','index.html','manifest.json','map.bin'];
+const C='trip-v37';const F=['./','index.html','manifest.json','map.bin'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(C).then(c=>c.addAll(F.map(u=>new Request(u,{cache:'reload'})))));self.skipWaiting()});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==C).map(x=>caches.delete(x)))));self.clients.claim()});
 // Cache-first (instant launch, works offline); refresh the cached copy in the background. version.json always goes to the network.
